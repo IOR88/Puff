@@ -5,13 +5,19 @@ states functions @args:
 
 ORIENTATE = {
     '{': (),
-    '}': ()
+    '}': (),
+    '[': (),
+    ']': (),
+    ',': (),
+    '"': (),
+    ':': ()
 }
 
 
 def orientate_state(data):
-    if ORIENTATE.get(data):
-        return True
+    command = ORIENTATE.get(data, None)
+    if command:
+        return True, command
     return False
 # =================== #
 
